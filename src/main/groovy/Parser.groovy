@@ -8,9 +8,10 @@ class Parser {
         def tokens = []
         Token t
         String res
-        while (((t, res) = getToken(formula)))
+        for(res = formula; res.length() > 0 ; (t,res) = getToken())
+            tokens << t
 
-        return res
+        return sumUpElements(tokens)
     }
 
 
@@ -29,7 +30,7 @@ class Parser {
         return new Tuple2<Token, String>(token, res)
     }
 
-    def static sumUpElements(Element[] elements) {
+    def static sumUpElements(List<Element> elements) {
         def res = [:]
         for (Element element : elements) {
             if(null == res[element.name]) {

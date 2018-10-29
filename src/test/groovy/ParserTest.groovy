@@ -22,7 +22,7 @@ class ParserTest extends Specification {
 
     def "test summing up elements"() {
         given:
-        Parser.Element[] elements = [["O", 1], ["O", 1], ["Mg", 1]]
+        List<Parser.Element> elements = [["O", 1], ["O", 1], ["Mg", 1]]
         when:
         def sum = sumUpElements(elements)
         then:
