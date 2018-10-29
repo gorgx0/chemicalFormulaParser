@@ -17,7 +17,7 @@ class ParserTest extends Specification {
         ""      || [:]
         "O"     || ["O": 1]
         "O2"    || ["O": 2]
-        "H2O"   || ["O": 2, "H": 1]
+        "H2O"   || ["O": 1, "H": 2]
     }
 
     def "test summing up elements"() {

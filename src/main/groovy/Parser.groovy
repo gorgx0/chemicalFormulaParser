@@ -8,9 +8,10 @@ class Parser {
         def tokens = []
         Token t
         String res
-        for(res = formula; res.length() > 0 ; (t,res) = getToken())
+        for(res = formula; res.length() > 0 ; ){
+            (t,res) = getToken(res)
             tokens << t
-
+        }
         return sumUpElements(tokens)
     }
 
